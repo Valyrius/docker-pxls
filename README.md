@@ -1,5 +1,7 @@
 # Information
+[**Docker Hub**](https://hub.docker.com/r/valyrius/pxls)  
 [**Pxls Repository**](https://github.com/pxlsspace/Pxls)  
+
 **Ports:** [4567]  
 **Decompressed Size:** 219MB
 
