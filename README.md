@@ -1,5 +1,4 @@
-# Information
-[**Docker Hub**](https://hub.docker.com/r/valyrius/pxls)  
+# Information 
 [**Pxls Repository**](https://github.com/pxlsspace/Pxls)  
 
 **Ports:** [4567]  
