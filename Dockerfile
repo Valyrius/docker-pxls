@@ -1,11 +1,11 @@
-FROM adoptopenjdk/openjdk16:alpine as builder
-RUN apk --no-cache add build-base maven git \
-  && git clone https://github.com/pxlsspace/Pxls.git \
-  && cd Pxls/ \
-  && mvn clean package\
-  && rm -rf node node_modules
+FROM maven:3.8.3-openjdk-16 as builder
+RUN git clone https://github.com/pxlsspace/Pxls.git; \
+  cd Pxls/; \
+  mvn clean package; \
+  cp target/pxls*.jar /mnt/pxls.jar; \
+  cp -r resources/ /mnt;
 
 FROM adoptopenjdk/openjdk16:alpine-jre
-COPY --from=builder /Pxls /Pxls
+COPY --from=builder /mnt /Pxls
 WORKDIR /Pxls
-CMD [ "java", "-jar", "target/pxls-1.0-SNAPSHOT.jar" ]
+CMD [ "java", "-jar", "pxls.jar" ]
